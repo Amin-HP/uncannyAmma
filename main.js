@@ -12,7 +12,6 @@
 
 //import three.js
 import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';//camera controls
 import { GUI } from 'three/addons/libs/lil-gui.module.min.js';//Dat Gui
 import Stats from 'three/examples/jsm/libs/stats.module';//frame rate and other stats
 import * as SkeletonUtils from'three/examples/jsm/utils/SkeletonUtils.js';
