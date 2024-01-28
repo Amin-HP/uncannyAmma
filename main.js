@@ -74,11 +74,11 @@ function init() {
   //add point light
   pointLight = new THREE.PointLight(0xffffff, 90); 
   pointLight.shadow.camera.near = 0.01;
-  pointLight.shadow.camera.far = 100;
-  pointLight.shadow.camera.left = -50;
-  pointLight.shadow.camera.right = 50;
-  pointLight.shadow.camera.top = 50;
-  pointLight.shadow.camera.bottom = -50;
+  pointLight.shadow.camera.far = 200;
+  pointLight.shadow.camera.left = -70;
+  pointLight.shadow.camera.right = 70;
+  pointLight.shadow.camera.top = 70;
+  pointLight.shadow.camera.bottom = -70;
   pointLight.shadow.mapSize.width = 2048;
   pointLight.shadow.mapSize.height = 2048;
   pointLight.shadow.bias = -0.001;
