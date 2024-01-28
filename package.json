@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --port 5500 --open",
     "build": "vite build",
-    "preview": "vite preview --open"
+    "preview": "vite preview --open",
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
