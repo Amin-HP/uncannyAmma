@@ -30,6 +30,9 @@ let gui, stats;
 //hands Array
 const hands = [];
 
+let rowNum = 4;
+let colNum = 7;
+
 function init() {
   //config Scene and Fog
   scene = new THREE.Scene();
@@ -106,11 +109,22 @@ function init() {
   gui.open();
   gui.hide();
   //Put your glb files (all static assets) in the public folder
+
+  const searchParams = new URLSearchParams(window.location.search);
+  if(searchParams.has('row')){
+    rowNum = searchParams.get('row') - 1; 
+    console.log(rowNum);
+  }
+  if(searchParams.has('col')){
+    colNum = searchParams.get('col') - 1;
+    console.log(colNum);
+  }
+
   new GLTFLoader()
   .setPath( 'models/' )
   .load( 'hand.gltf', function ( gltf ) {
-    for(let i = -7; i <= 7; i += 2){
-      for(let j = -4; j <= 4; j += 2){
+    for(let i = -colNum; i <= colNum; i += 2){
+      for(let j = -rowNum; j <= rowNum; j += 2){
         const model = SkeletonUtils.clone(gltf.scene.children[0]);
         model.position.set(i, 0, j);
         const hand = new Hand(model);
